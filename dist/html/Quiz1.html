@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>quiz1</title>
+       <link rel="stylesheet" type="text/css" href="css/MainStyle.css">
+
+<script>
+ /**************************Strat Quiz****************************/
+var radValue=0;
+var ans=3;
+
+
+$("#SubBtn").addClass("btnDisable");
+$("#SubBtn").on('click',checkAns);
+
+outString=$("title").text();
+console.log(outString.substring(10, 16));
+
+
+
+$('input[name="radio"]').change(function(){
+    if ($(this).is(":checked")){
+        checkRadio(true);
+        radValue=$(this).attr("value");
+
+    }
+});
+
+
+function checkRadio(reslt){
+    if(reslt==true){
+        $("#SubBtn").removeClass("btnDisable");
+    }else{
+        $("#SubBtn").addClass("btnDisable");
+    }
+
+}
+
+
+function checkAns(){
+    console.log(radValue);
+    if(Number(radValue)==ans){
+        corAns();
+        disableAll();
+    }else{
+       notcorrAns();
+        disableAll();
+    }
+
+}
+function disableAll(){
+    $(".cont").children("label").children("input").each(function(i)
+                                                        {
+        $(this).attr('disabled',true);
+    }
+                                                       )
+
+    $(".cont").children("label").each(function(i)
+                                      {
+
+        $(this).off("click");
+        $(this).css("cursor","default");
+    }
+                                     )
+
+    checkRadio(false);
+}
+
+
+function corAns()
+{
+    $(".modal-content .modal-header .modal-title").html("<span style='color:#9BCE3B;'>Correct</span>");
+    $(".modal-content .modal-body").html("That’s correct! A three-phase machine does not require a starter.");
+}
+/*Also we can do it as  var data={1:{title: , body:}} then call it as data[radValue]*/
+function notcorrAns()
+{
+    $(".modal-content .modal-header .modal-title").html("<span style='color:#E56262;'>Incorrect</span>");
+
+    if(radValue=="1"){
+        $(".modal-content .modal-body").html("That’s not quite right. The pulsating components of each phase cancel each other because of 1200 phase shifts. Thus, the power delivered to a three-phase load is <b>constant</b> in nature and not pulsating.");
+
+    }else if(radValue=="2"){
+        $(".modal-content .modal-body").html("That’s not quite right. Power per kilogram of metal from a Three-phase machine is <b>more</b> as compared to single phase machine.");
+
+    }else if(radValue=="4"){
+        $(".modal-content .modal-body").html("That’s not quite right. Mechanical vibrations in three-phase motors are <b>less</b> as compared to single-phase motors.");
+
+    }
+
+}
+
+ /**************************End Quiz****************************/             
+</script>
+
+    </head>
+
+
+    <body>
+
+
+
+        <div class="mainOne">
+
+            <div class ="question">
+                <p>Which of the following statements is correct for a three-phase system?
+                </p>
+                <div class="qusMark"><img src="images/qus.svg" alt="quastions"></div>
+
+            </div>
+            <div class="cont">
+
+                <label class="contRad contain">The power delivered to a three-phase load is pulsating in nature.
+                    <input type="radio" name="radio" id="rad1" value="1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contRad contain">Power per kilogram of metal from a three-phase machine is less as compared to a single-phase machine.
+                    <input type="radio" name="radio" id="rad1" value="2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contRad contain">A three-phase machine does not require a starter.
+                    <input type="radio" name="radio" id="rad1" value="3">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contRad contain">Mechanical vibrations in three-phase motors are more as compared to single phase motors.
+                    <input type="radio" name="radio" id="rad1" value="4">
+                    <span class="checkmark"></span>
+                </label>
+
+                <input id = "SubBtn" type = "button" value = "Submit" class="btnSub " data-toggle="modal" data-target="#exampleModalCenter">
+
+
+
+
+                <div class="bottomDiv">
+                    <span class="bottomIcon">!</span>
+                    <p class="bottomText">Select the correct option and click or tap Submit.</p>
+                </div>
+            </div>
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center border-bottom-0">
+                            <h5 class="modal-title w-100" id="exampleModalLongTitle">Correct</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            That’s correct! A three-phase machine does not require a starter.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+<!--        <script>
+            var url = "quiz.js";
+            $.getScript(url);
+        </script>
+        -->
+    </body>
+</html>
