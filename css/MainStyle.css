@@ -1,0 +1,482 @@
+/********************Header and Grid Style******************/
+body{
+    background-color: #F1F1F1;
+    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode';
+
+}
+.bg-dark{
+    background-color:#FFFFFF!important;
+}
+
+
+
+
+.navbar-dark .navbar-nav .nav-link{
+    color: #444444;
+    font-size: 18px;
+    font-weight: bold;
+    /*margin-top: 10px;*/
+}
+
+.lineSprit{
+
+    background:linear-gradient(to right,  #7ac041 0%,#2cab46 23%,#1da747 42%,#008dd3 79%,#00aaea 100%);
+    height: 6px;
+
+}
+.sccont{
+    /* margin-left: 5px;
+    margin-right: 5px;
+    height: 100%;*/
+
+}
+.righttDiv{
+
+    /*border: 1px solid #DDDDDD;
+    background-color: #fff;*/
+    margin-top: 0;
+    /*  background: red;*/
+}
+.lefttDiv{
+    /* border: 2px solid blue;*/
+    height: auto;
+    max-height: 45%;
+    padding: 10px;
+}
+/********************Course menue Style******************/
+#mainLeft{
+    padding-top: 9px;
+    text-align: center;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    color: #444;
+
+}
+#unlock{
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+    top: -3px;
+    font-size: 13px;
+}
+.fa-book{
+    margin-right: 8px;
+    font-size: 19px;
+}
+.mathCourse{
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    color:"#333";
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: 500;
+
+}
+
+.BioCourse{
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    color:"#333";
+    margin-top: 12px;
+    margin-bottom: 10px;
+    font-weight: 500;
+
+
+}
+.overCourse1{
+    height: 80%;
+    overflow: auto;
+
+}
+#parntBord{
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 0; right: 0; left: 0;
+
+
+}
+
+/* Experiences */
+ul.experiences {
+
+    margin-top: 20px;
+}
+ul.experiences li {
+    padding-left: 4px;
+    list-style: none;
+    font-weight: 500;
+}
+
+
+
+p {
+
+    margin-bottom: 0;
+}
+
+ul.experiences li {
+    position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
+    /* use padding-bottom instead of margin-bottom.*/ 
+    margin-bottom: 0; /* This overrides previously specified margin-bottom */
+
+    padding-bottom: 2.2em;
+    font-size: 16px;
+}
+
+
+.fa-play-circle{
+    font-size: 20px;
+    background-color: #fff;
+    color: darkgray;
+    color: var(--iconColor);
+
+    position: absolute;
+    left: -27px; 
+    top: 0px;
+
+
+}
+.fa-question-circle{
+    font-size: 20px;
+    color: darkgray;
+    color: var(--iconColor);
+    background-color: #fff;
+    position: absolute;
+    left: -27px; 
+    top: 0px;
+
+
+}
+
+
+.fa-spinner {
+    font-size: 20px;
+    color: darkgray;
+    color: var(--iconColor);
+
+    position: absolute;
+    left: -26px; 
+    top: 0px;
+
+}
+
+
+
+ul.experiences li:before {
+
+    content:"";
+    position: absolute;
+    left: -18px; /* adjust manually */
+    border-left: 2px solid #C3C3C3;
+    height: 100%;
+    width: 2px;
+
+}
+
+ul.experiences li:first-child:before {
+
+    top: 17px; 
+}
+
+ul.experiences li:last-child:before {
+
+    /*height: 8px; */
+    height: 2px; 
+}
+ul.experiences li:hover{
+    color: #57B643;
+    font-weight:500;
+}
+
+.green{
+    cursor: pointer;
+    padding-bottom: 10px
+}
+
+
+.hoverElem{
+    color: #57B643;
+    font-weight: 500;
+
+}
+
+/********************End Course menue Style******************/
+.vidoPlay{
+    margin-top:0;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    background-color: transparent;
+    color: #444444;
+
+}
+.btn-primary{
+    float: right;
+    /*margin-top: 28px;*/
+    margin-top: 50px;
+    margin-right: 14px;
+    border-radius: 16px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #4093CB;
+    box-shadow: 2px 2px 0 0 rgba(0,0,0,.1);
+    padding: 7px 27px;
+    font-size: 18px;
+
+}
+.btn-primary:hover{
+    background-color: #3ca4ea;
+    border: 1px solid #3ca4ea;
+
+}
+
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+
+.selected {
+    font-weight: 500;
+    color: #57B643;
+}
+/*if the screen less than xl hide the lock*/
+@media (max-width:1200px){
+    #unlock {
+        visibility: hidden;
+    }
+
+}
+/*here to give max width to title then warp if exceed it*/
+.navTitle{
+    width: auto;
+    max-width: 50%;
+}
+.showPage2{
+
+    padding-bottom: 66px;
+    width: 98%;
+    background-color: #DEDEDE;
+    margin-left: 12px;
+
+
+}
+/********************Quiz Style******************/
+
+.question{
+    display: inline-block;
+   /* height: 115px;*/
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 40px 33px 32px 60px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    color: #60636A;
+    box-shadow: 4px 4px 7px 2px rgba(0,0,0,.10);
+    font-size: 22px;
+    line-height: 23px;
+    margin-left: 70px;
+    margin-top: 70px;
+    background-color: #fff;
+}
+.question p{
+    padding-top: 5px;
+
+}
+.cont{
+    margin-left: 80px;
+    margin-top: 12px;
+
+
+
+
+}
+.mainOne{
+    margin-right: 37px;
+}
+/* The container */
+.contain {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 37px;
+    cursor: pointer;
+    font-size: 21px;
+    color: #666;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Here hide default radio button */
+.contain input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* here create custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #d1d1d1;
+}
+
+
+/* when btn checked*/
+.contain input:checked ~ .checkmark {
+    background-color: #fff;
+}
+
+.contain input:disabled ~ .checkmark {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* here hide when not chcked */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* here show when checked */
+.contain input:checked ~ .checkmark:after {
+    display: block;
+}
+.contain input:disabled ~ .checkmark:after {
+   border-color: #7b7b7b;
+}
+
+
+
+/* style of inside circle */
+.contRad .checkmark:after {
+    top: 8px;
+    left: 7px;
+    width: 11px;
+    height: 11px;
+     border-radius: 50%;
+    background: #93e026;
+    cursor: pointer;
+}
+.contBox .checkmark:after {
+left: 4px;
+top: 4px;
+width: 20px;
+height: 12px;
+border: solid #75BB43;
+border-width: 0 3px 3px 0;
+transform: scaleY(-1) rotate(231deg);
+}
+.contRad .checkmark{
+    border-radius: 50%;
+}
+
+.contBox .checkmark{
+    border-radius: 7px;
+}
+
+.contRad input:disabled ~ .checkmark:after {
+    background: #7b7b7b;
+}
+
+
+
+.btnDisable{
+    background: #bebebe !important;
+    color: #a2a2a2;
+    text-shadow: none;
+    cursor: default;
+    pointer-events: none;   
+}
+.btnSub{
+    display: inline-block;
+    padding: 11px 31px;
+    background: #fff;
+    font-size: 20px;
+    text-align: center;
+    color: #888;
+    border-radius: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.qusMark {
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    height: 100%;
+}
+.bottomDiv{
+    color: #009448;
+    float: right;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    right: 10px;
+    top: 40px;
+
+    margin-top: 50px;
+}
+.bottomDiv .bottomIcon{
+    font-family: impact;
+    background-color: #009448;
+    border-radius: 100%;
+    color: white;
+    padding: 7px 19px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -19px;
+}
+.bottomDiv .bottomText{
+    background: rgba(255,255,255,0.8);
+    padding: 30px 30px 30px 45px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 18px;
+}
+.bg-dark {
+    background-color: #fff!important;
+}
+.modal-content{
+    border-radius: 1.5rem!important;
+    padding: 15px;
+    width: auto;
+    height: auto;
+
+}
+.modal-title{
+    font-size: 30px;
+    font-weight: bold;
+}
+.modal-body{
+    color: #95989A;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 20px;
+}

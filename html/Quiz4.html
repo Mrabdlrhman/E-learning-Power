@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>quiz4</title>
+        <link rel="stylesheet" type="text/css" href="css/MainStyle.css">
+
+        <script>
+            /**************************Strat Quiz****************************/
+            var radValue=0;
+            var ans=["1","4"];
+            var arr=[];
+            
+
+            $("#SubBtn").addClass("btnDisable");
+
+            $("#SubBtn").on('click',checkAns);
+
+            outString=$("title").text();
+            
+
+
+
+            $('input[name="checks"]').change(function(){
+                if ($(this).is(":checked")){
+                    checkRadio(true);
+                    radValue=$(this).attr("value");
+                    arr.push($(this).val());
+
+
+                }else{
+
+                    arr=arr.filter(x => x != $(this).val());
+                }
+            });
+
+
+            function checkRadio(reslt){
+                if(reslt==true){
+                    $("#SubBtn").removeClass("btnDisable");
+                }else{
+                    $("#SubBtn").addClass("btnDisable");
+                }
+
+            }
+
+            function compareArrays(arr1, arr2) {
+                return $(arr1).not(arr2).length == 0 && $(arr2).not(arr1).length == 0
+            };
+
+
+            function checkAns(){
+                if(compareArrays(ans,arr)){
+                    corAns();
+                    disableAll();
+                }else{
+                    notcorrAns();
+                    disableAll();
+                }
+
+            }
+            function disableAll(){
+                $(".cont").children("label").children("input").each(function(i)
+                                                                    {
+                    $(this).attr('disabled',true);
+                }
+                                                                   )
+
+                $(".cont").children("label").each(function(i)
+                                                  {
+
+                    $(this).off("click");
+                    $(this).css("cursor","default");
+                }
+                                                 )
+
+                checkRadio(false);
+            }
+
+
+            function corAns()
+            {
+                $(".modal-content .modal-header .modal-title").html("<span style='color:#9BCE3B;'>Correct</span>");
+                $(".modal-content .modal-body").html("That’s correct! A cogeneration plant lowers the carbon dioxide emissions, and combines processes to achieve more than one form of energy and, thus, saving money.");
+            }
+
+            function notcorrAns()
+            {
+                $(".modal-content .modal-header .modal-title").html("<span style='color:#E56262;'>Incorrect</span>");
+
+                $(".modal-content .modal-body").html("That’s not quite right. A cogeneration plant lowers the carbon dioxide emissions, and combines processes to achieve more than one form of energy and, thus, saving money.");
+            }
+
+            /**************************End Quiz****************************/             
+        </script>
+
+    </head>
+
+
+    <body>
+
+
+
+        <div class="mainOne">
+
+            <div class ="question">
+                <p>Which of the following is/are true for a cogeneration plant?
+                </p>
+                <div class="qusMark"><img src="images/qus.svg" alt="quastions"></div>
+
+            </div>
+            <div class="cont">
+
+                <label class="contBox contain">It lowers the carbon dioxide emissions.
+                    <input type="checkbox" name="checks" id="rad1" value="1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contBox contain">Through the utilization of the heat, the efficiency of a cogeneration plant decreases.
+                    <input type="checkbox" name="checks" id="rad1" value="2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contBox contain">Cogeneration is good at a low scale, but cannot support country power production.
+                    <input type="checkbox" name="checks" id="rad1" value="3">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contBox contain">It combines processes to achieve more than one form of energy and, thus, saves money.
+                    <input type="checkbox" name="checks" id="rad1" value="4">
+                    <span class="checkmark"></span>
+                </label>
+
+                <input id = "SubBtn" type = "button" value = "Submit" class="btnSub " data-toggle="modal" data-target="#exampleModalCenter">
+
+
+
+
+                <div class="bottomDiv">
+                    <span class="bottomIcon">!</span>
+                    <p class="bottomText">Select the correct option and click or tap Submit.</p>
+                </div>
+            </div>
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center border-bottom-0">
+                            <h5 class="modal-title w-100" id="exampleModalLongTitle">Correct</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            That’s correct! A three-phase machine does not require a starter.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--        <script>
+var url = "quiz.js";
+$.getScript(url);
+</script>
+-->
+    </body>
+</html>
